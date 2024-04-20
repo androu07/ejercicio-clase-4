@@ -13,10 +13,33 @@
         <form method="post" th:action="@{}">                <!-- COMPLETAR -->
             <div class="row">
                 <div class="form-group col-6">
+                    <label for="nombre">Nombre</label>
+                    <input name="nombre" type="text" class="form-control" id="nombre">
+                </div>
+                <div class="form-group col-6">
+                    <label for="apellido">Apellido</label>
+                    <input name="apellido" type="text" class="form-control" id="apellido">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="correo">Correo Electrónico</label>
+                    <input name="correo" type="text" class="form-control" id="correo">
+                </div>
+                <div class="form-group col-6">
+                    <label for="contrasena">Contraseña</label>
+                    <input name="contrasena" type="text" class="form-control" id="contrasena">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6">
                     <!-- COMPLETAR -->
                 </div>
                 <div class="form-group col-6">
-                    <!-- COMPLETAR -->
+                    <label for="sueldo">Sueldo</label>
+                    <input name="sueldo" type="text" class="form-control" id="sueldo">
                 </div>
             </div>
 
@@ -29,26 +52,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="form-group col-6">
-                    <!-- COMPLETAR -->
-                </div>
-                <div class="form-group col-6">
-                    <!-- COMPLETAR -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-6">
-                    <!-- COMPLETAR -->
-                </div>
-                <div class="form-group col-6">
-                    <!-- COMPLETAR -->
-                </div>
-            </div>
-
-            <a th:href="@{}" class="btn btn-danger"></a>                 <!-- COMPLETAR -->
-            <button type="submit" class="btn btn-primary"></button>                <!-- COMPLETAR -->
+            <a th:href="@{}" class="btn btn-danger">Cancelar</a>                 <!-- COMPLETAR -->
+            <button type="submit" class="btn btn-primary">Registrar</button>                <!-- COMPLETAR -->
             <div class="row">
                 <div class="form-group"></div>
             </div>
