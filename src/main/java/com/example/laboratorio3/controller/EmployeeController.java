@@ -40,11 +40,11 @@ public class EmployeeController {
 
     @GetMapping("/editar")
     public String editarEmployee(Model model,
-                                 @RequestParam("employeeid") int employeeid {
+                                 @RequestParam("employeeid") int employeeid) {
         Optional<Employees> optEmployees = employeesRepository.findById(employeeid);
         if (optEmployees.isPresent()) {
             Employees employees = optEmployees.get();
-            model.addAtributte("empleado", employees);
+            model.addAttribute("empleado", employees);
             return "employee/editFrm";
         } else {
             return "redirect:/employee/lista";
@@ -60,7 +60,5 @@ public class EmployeeController {
         }
         return "redirect:/lista";
     }
-
-    //COMPLETAR
 
 }
