@@ -39,16 +39,26 @@ public class EmployeeController {
     }
 
     @GetMapping("/editar")
-    public String editarEmployee(Model model, @RequestParam("id") int id; {
-            Optional<Employees> optEmployees = EmployeesRepository.findById(id);
+    public String editarEmployee(Model model,
+                                 @RequestParam("employeeid") int employeeid {
+        Optional<Employees> optEmployees = employeesRepository.findById(employeeid);
+        if (optEmployees.isPresent()) {
+            Employees employees = optEmployees.get();
+            model.addAtributte("empleado", employees);
+            return "employee/editFrm";
+        } else {
+            return "redirect:/employee/lista";
         }
     }
 
-
-    public String borrarEmpleado() {
-
-       //COMPLETAR
-
+    @GetMapping("/borrar")
+    public String borrarEmpleado(Model model,
+                                 @RequestParam("employeeid") int employeeid) {
+        Optional<Employees> optEmployees = employeesRepository.findById(employeeid);
+        if (optEmployees.isPresent()) {
+            employeesRepository.deleteById(employeeid);
+        }
+        return "redirect:/lista";
     }
 
     //COMPLETAR
