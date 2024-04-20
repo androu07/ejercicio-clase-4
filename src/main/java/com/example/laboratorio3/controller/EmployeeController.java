@@ -22,7 +22,7 @@ public class EmployeeController {
 
     @GetMapping("/empleados")
     public String listaEmployee(Model model){
-        List<Employees> lista = EmployeesRepository.findAll();
+        List<Employees> lista = employeesRepository.findAll();
         model.addAttribute("listaEmpleados",lista);
         return "employee/lista";
     }
@@ -39,9 +39,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/editar")
-    public String editarEmployee(Model model) {
-        @RequestParam("id") int id; {
-            Optional<Employees> optionalEmployees =
+    public String editarEmployee(Model model, @RequestParam("id") int id; {
+            Optional<Employees> optEmployees = EmployeesRepository.findById(id);
         }
     }
 
